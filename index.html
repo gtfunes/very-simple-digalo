@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' https://*.googletagmanager.com; style-src 'self'; img-src 'self' https://*.google-analytics.com https://*.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Sacá una película al azar para jugar al Dígalo con mímica. Sin repetir, con reloj y sin conexión: actuala sin hablar y que tu equipo adivine." />
+    <meta name="theme-color" content="#12122a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Dígalo" />
+    <title>Dígalo con mímica: películas al azar</title>
+    <link rel="canonical" href="https://digalo.gtfunes.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:title" content="Dígalo con mímica: películas al azar" />
+    <meta property="og:description" content="Sacá una película al azar para jugar al Dígalo con mímica. Sin repetir, con reloj y sin conexión: actuala sin hablar y que tu equipo adivine." />
+    <meta property="og:url" content="https://digalo.gtfunes.com/" />
+    <meta property="og:image" content="https://digalo.gtfunes.com/icons/icon-512.png" />
+    <meta property="og:image:alt" content="Dígalo con mímica" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icons/icon-180.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="analytics.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>🎭 Dígalo</h1>
+      <div class="toggles">
+        <button id="mute" type="button" aria-label="Sonido" aria-pressed="true">🔊 Sonido</button>
+      </div>
+    </header>
+
+    <main class="app">
+      <section class="stage" aria-label="Película actual">
+        <button id="card" class="card" type="button" aria-pressed="false" disabled>
+          <span class="card-hint" id="hint"></span>
+          <span class="card-title" id="title" hidden></span>
+        </button>
+        <p class="clock" id="clock" role="timer" hidden></p>
+        <p class="status" id="status"></p>
+
+        <div class="actions">
+          <button id="draw" class="primary" type="button" disabled>Sacar película</button>
+          <button id="timer" class="secondary" type="button">⏱ Reloj</button>
+        </div>
+
+        <div class="history" id="history-wrap" hidden>
+          <h2>Anteriores</h2>
+          <ol id="history" class="history-list"></ol>
+        </div>
+      </section>
+
+      <section class="options" aria-label="Opciones">
+        <label class="field">
+          Dificultad
+          <select id="level"></select>
+        </label>
+        <label class="field">
+          Tiempo
+          <select id="seconds"></select>
+        </label>
+        <button id="reset" type="button">Nuevo juego</button>
+      </section>
+      <p class="app-description">Sacá una película al azar para jugar al Dígalo con mímica. Sin repetir, con reloj y sin conexión: actuala sin hablar y que tu equipo adivine.</p>
+    </main>
+  </body>
+</html>
